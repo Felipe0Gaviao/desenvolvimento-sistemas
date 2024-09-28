@@ -32,5 +32,21 @@ Comandos:
 3 - Limpar: Remove todos os elementos da pilha
 4 - Listar: Lista todos os elementos armazenados na pilha
 5 - Vazia: Retorna Verdadeiro se a lista estiver vazia e Falso caso contrário
+6 - Sair: Sair do programa
 """)
-    comando = int()
+    comando = int(input("Comando: "))
+
+    match comando:
+        case 1:
+            empilhar()
+        case 2:
+            desempilhar()
+        case 3:
+            limpar()
+        case 4:
+            listar()
+        case 5:
+            vazia()
+        case 6:
+            print("Saindo do programa...")
+            break
