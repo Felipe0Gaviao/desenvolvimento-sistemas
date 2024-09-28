@@ -2,6 +2,9 @@
 
 ## Disciplinas
 
-### Lógica de Programação
+### [Lógica de Programação](/logica-programacao/)
 
-- #### []
+- #### [Condicionais](/logica-programacao/condicionais/)
+- #### [Laços de Repetição](/logica-programacao/lacos-de-repeticao/)
+- #### [Tipos](/logica-programacao/tipos/)
+- #### [Vetores](/logica-programacao/vetores/)
