@@ -32,7 +32,7 @@ while True:
 5 - Vazia: Retorna Verdadeiro se a lista estiver vazia e Falso caso contrário
 6 - Sair: Sair do programa
 """)
-    comando = int(input("Comando: "))
+    comando = int(input("-> "))
 
     match comando:
         case 1:
