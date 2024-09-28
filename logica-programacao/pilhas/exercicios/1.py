@@ -2,8 +2,8 @@ import os
 
 os.system("clear || cls")
 
+maximo = 20
 pilha = []
-
 
 def empilhar():
     print("""Insira o nome do item que vai ser adicionado a pilha
@@ -20,8 +20,13 @@ Insira (S) para sair deste comando
             print("Retornando para o menu")
             break
         else:
-            pilha.append(item)
-            item = input("Adicione mais um item ou (s)air programa: ")
+            while True:
+                if len(pilha) <= maximo:
+                    pilha.append(item)
+                    item = input("Adicione mais um item ou (s)air programa: ")
+                else:
+                    print(f"Pilha tem um máximo de {maximo} itens")
+                    print(f"Remova itens para adicionar novos")
 
 while True:
     print("""
@@ -48,3 +53,5 @@ while True:
         case 6:
             print("Saindo do programa...")
             break
+        case _:
+            print("")
