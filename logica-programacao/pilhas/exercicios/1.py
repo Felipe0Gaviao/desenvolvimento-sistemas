@@ -26,7 +26,6 @@ Insira (S) para sair deste comando
 
 while True:
     print("""
-Comandos:
 1 - Empilhar: Adiciona um item ao fim da pilha
 2 - Desempilhar: Remove o item ultimo item da pilha
 3 - Limpar: Remove todos os elementos da pilha
