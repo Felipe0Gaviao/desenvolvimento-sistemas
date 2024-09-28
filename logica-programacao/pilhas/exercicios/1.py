@@ -21,7 +21,6 @@ Insira (S) para sair deste comando
             break
         else:
             pilha.append(item)
-            print(pilha)
             item = input("Adicione mais um item ou (s)air programa: ")
 
 while True:
