@@ -21,6 +21,16 @@ Insira (S) para sair deste comando
             break
         else:
             pilha.append(item)
-            break
-    
-empilhar()
+            print(pilha)
+            item = input("Adicione mais um item ou (s)air programa: ")
+
+while True:
+    print("""
+Comandos:
+1 - Empilhar: Adiciona um item ao fim da pilha
+2 - Desempilhar: Remove o item ultimo item da pilha
+3 - Limpar: Remove todos os elementos da pilha
+4 - Listar: Lista todos os elementos armazenados na pilha
+5 - Vazia: Retorna Verdadeiro se a lista estiver vazia e Falso caso contrário
+""")
+    comando = int()
