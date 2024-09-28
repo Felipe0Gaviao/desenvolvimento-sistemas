@@ -9,7 +9,7 @@ def empilhar():
     print("""Insira o nome do item que vai ser adicionado a pilha
 Insira (S) para sair deste comando
 ---------------------------------------------""")
-    item = input("")
+    item = input("-> ")
 
 
     while True:
