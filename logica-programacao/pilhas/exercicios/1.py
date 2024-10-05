@@ -2,56 +2,85 @@ import os
 
 os.system("clear || cls")
 
-maximo = 20
-pilha = []
+tamanho_max = 20
+pilha = [None] * tamanho_max  
+topo = -1
 
 def empilhar():
-    print("""Insira o nome do item que vai ser adicionado a pilha
+    global topo
+    print("""Insira o nome do item que vai ser adicionado à pilha
 Insira (S) para sair deste comando
 ---------------------------------------------""")
     item = input("-> ")
 
+    if item.lower() == 's':
+        print("Retornando para o menu")
+        return
 
-    while True:
-        if item == "":
-            print("Item não pode ser vazio")
-            item = input("Insira o nome novamente: ")
-        elif item.lower() == "s":
-            print("Retornando para o menu")
-            break
-        else:
-            while True:
-                if len(pilha) <= maximo:
-                    pilha.append(item)
-                    item = input("Adicione mais um item ou (s)air programa: ")
-                else:
-                    print(f"Pilha tem um máximo de {maximo} itens")
-                    print(f"Remova itens para adicionar novos")
+    if topo < tamanho_max - 1:
+        topo += 1
+        pilha[topo] = item
+        print(f"{item} foi cadastrado com sucesso")
+    else:
+        print("Limite de itens cadastrados atingido!")
+
+def desempilhar():
+    global topo
+    if topo == -1:
+        print("A pilha está vazia!")
+        return
+
+    item_removido = pilha[topo] 
+    topo -= 1  
+    print(f"{item_removido} foi removido da pilha!")
+
+def limpar():
+    global topo
+    if topo == -1:
+        print("A lista já está vazia!")
+    else:
+        pilha.clear()
+        topo = -1 
+        print("A pilha foi limpa!")
+
+def vazia():
+    if topo == -1:
+        print("A Pilha está vazia!")
+    else:
+        print("A Pilha NÃO está vazia!")
+
+def listar():
+    global topo
+    if topo == -1:
+        print("Lista vazia")
+    else:
+        print("Elementos na pilha:")
+        for i in range(topo + 1):
+            print(f"{i + 1} - {pilha[i]}")
 
 while True:
     print("""
 1 - Empilhar: Adiciona um item ao fim da pilha
-2 - Desempilhar: Remove o item ultimo item da pilha
+2 - Desempilhar: Remove o último item da pilha
 3 - Limpar: Remove todos os elementos da pilha
 4 - Listar: Lista todos os elementos armazenados na pilha
 5 - Vazia: Retorna Verdadeiro se a lista estiver vazia e Falso caso contrário
 6 - Sair: Sair do programa
 """)
-    comando = int(input("-> "))
-
-    match comando:
-        case 1:
+    
+    match input("Comando: "):
+        case "1":
             empilhar()
-        case 2:
+        case "2":
             desempilhar()
-        case 3:
+        case "3":
             limpar()
-        case 4:
+        case "4":
             listar()
-        case 5:
+        case "5":
             vazia()
-        case 6:
+        case "6":
             print("Saindo do programa...")
             break
         case _:
-            print("")
+            print("Comando inválido! Tente novamente.")
