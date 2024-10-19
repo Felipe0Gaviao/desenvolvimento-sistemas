@@ -33,7 +33,7 @@ while True:
             random.shuffle(l)
             imprimir_em_ordem(l)
         case '6':
-            numero = int(input())
+            numero = int(input('ID:'))
 
             if 0 > numero > len(lista):
                 print('Número especificado está fora da lista')
