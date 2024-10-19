@@ -13,6 +13,5 @@ while True:
             lista.append(input('Novo item:'))
         case '2':
             print(lista, sep='\n')
-
         case '3':
             print(sorted(lista))
