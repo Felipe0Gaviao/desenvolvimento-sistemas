@@ -4,12 +4,7 @@ os.system('cls || clear')
 
 lista = []
 
-def imprimir_em_ordem(lst):
-    for i, item in enumerate(lst, start=1):
-        print(f'{i}: {item}')
-
-while True:
-    comandos = '''
+comandos = '''
 1 - Cadastrar novo item
 2 - Listar
 3 - Listar Crescente
@@ -18,7 +13,13 @@ while True:
 6 - Remover
 7 - Sair
 '''
-    match input():
+
+def imprimir_em_ordem(lst):
+    for i, item in enumerate(lst, start=1):
+        print(f'{i}: {item}')
+
+while True:
+    match input(comandos):
         case '1':
             lista.append(input('Novo item:'))
         case '2':
