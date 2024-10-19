@@ -9,15 +9,16 @@ def imprimir_em_ordem(lst):
         print(f'{i}: {item}')
 
 while True:
-    match input('''
-    1 - Cadastrar novo item
-    2 - Listar
-    3 - Listar Crescente
-    4 - Listar Decrescente
-    5 - Embaralhar
-    6 - Remover
-    7 - Sair
-'''):
+    comandos = '''
+1 - Cadastrar novo item
+2 - Listar
+3 - Listar Crescente
+4 - Listar Decrescente
+5 - Embaralhar
+6 - Remover
+7 - Sair
+'''
+    match input():
         case '1':
             lista.append(input('Novo item:'))
         case '2':
